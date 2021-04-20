@@ -1,11 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
 
-  context 'Can be created with an email and password.' do
-    password = 'somepass'
-    user = User.create(email: 'ajiellodev@gmail.com', password: password, password_confirmation: password)
-    expect(user.valid?).to eq true
+  context 'Can be created' do
+    it 'from a dummy Oauth provider' do
+      user = User.create(email: 'ajiellodev@gmail.com', uid: 123, provider: 'github')
+      expect(user.valid?).to eq true
+    end
+
+    it 'from a legitimate Omniauth provider' do
+      # add test for this
+      expect(false).to eq true
+    end
   end
+
 end
