@@ -2,6 +2,8 @@
 
 This is the application that will run our main site. Built on the latest version of rails.
 
+Please do not commit anything to this repository until I finish my project review, thus ensuring that only I, A.J. Romaniello have worked on this. Contributions may begin after my project review.
+
 
 ## Contributing
 
