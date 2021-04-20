@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Retailer < ApplicationRecord
+  belongs_to :user
+  has_many :products
+  has_many :product_reviews, through: :products
+
   # Name validations
   validates_uniqueness_of :name, message: 'A retailer by this name already exists.'
   validates_length_of :name, maximum: 255
