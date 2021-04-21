@@ -1,2 +1,7 @@
 <h1>This is our homepage</h1>
 <p>Find me in app/views/static/home.html.erb</p>
+<% if @current_user %>
+  <%= button_to 'Log Out', logout_url %>
+<% else %>
+  <%= link_to 'Log In', login_url %>
+<% end %>
