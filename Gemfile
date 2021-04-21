@@ -11,10 +11,12 @@ gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
-# Use Active Model has_secure_password
-gem 'bcrypt', '~> 3.1.7'
 # Use to ease email validation.
 gem 'email_validator'
+
+# Omniauth & Strategies
+gem 'omniauth'
+gem 'omniauth-github'
 
 group :development, :test do
   gem 'dotenv-rails'
