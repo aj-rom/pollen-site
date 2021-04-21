@@ -1,5 +1,10 @@
-<h1>This is our homepage</h1>
-<p>Find me in app/views/static/home.html.erb</p>
+<h1>Pollen</h1>
+<p>An easy way to contribute to a sustainable future.</p>
+
+<%= link_to '/retailers' do %>
+  <h3>Retailers</h3>
+<% end %>
+
 <% if user_signed_in? %>
   <%= button_to 'Log Out', logout_path %>
 <% else %>
