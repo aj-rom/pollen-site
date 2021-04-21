@@ -15,14 +15,18 @@ gem 'sass-rails', '>= 6'
 gem 'email_validator'
 
 # Omniauth & Strategies
-gem 'omniauth'
+gem 'omniauth', '~> 2.0', '>= 2.0.4'
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
+
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 
 group :development, :test do
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'rubocop'
 end
 
 group :development do

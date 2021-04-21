@@ -1,0 +1,8 @@
+<h1>Log In</h1>
+<p>Use any of the following third-party authentication systems to create an account or log in.</p>
+
+<div id="strategies">
+  <%- User.omniauth_providers.each do |provider| %>
+    <%= button_to_provider(User, provider) %><br />
+  <% end %>
+</div>
