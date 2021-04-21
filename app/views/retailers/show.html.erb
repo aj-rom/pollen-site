@@ -1,0 +1,16 @@
+<h1><%= @retailer.name %></h1>
+<p><%= @retailer.description %></p>
+
+<% if user_owns_retailer?(current_user, @retailer) %>
+  <%= link_to 'Edit Retailer', edit_retailer_path(@retailer) %>
+<% end %>
+
+<% @retailer.products.each do |p| %>
+  <%= link_to p do %>
+    <div class="product" id="<%= p.id %>">
+      <h3><%= p.name %></h3>
+      <p><%= p.description %></p>
+      <span><%= p.price %></span>
+    </div>
+  <% end %>
+<% end %>

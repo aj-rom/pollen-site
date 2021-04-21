@@ -12,13 +12,13 @@ class Retailer < ApplicationRecord
   # Description Validations
   validates_presence_of :description, message: 'Please provide a description of your products/services.'
   validates_length_of :description,
-                      minimum: 100,
+                      minimum: 20,
                       maximum: 3000,
-                      message: 'Description must be between 100 - 3000 characters'
+                      message: 'Description must be between 20 - 3000 characters'
 
   def average_review
     count = product_reviews.count.to_f
-    product_reviews.inject(:+) / count
+    product_reviews.inject(:+) / count unless count == 0
   end
 
 end

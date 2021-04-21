@@ -1,6 +1,6 @@
 <h1>Retailers</h1>
 <div id="retailer-list">
-  <%= @retailers.each do |r| %>
+  <% @retailers.each do |r| %>
     <%= link_to r do %>
       <div class="retailer" id="<%= r.name %>">
         <h2><%= r.name %></h2>
