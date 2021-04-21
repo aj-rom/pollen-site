@@ -1,6 +1,8 @@
 class RetailersController < ApplicationController
 
-  def index; end
+  def index
+    @retailers = Retailer.all
+  end
 
   def show; end
 
