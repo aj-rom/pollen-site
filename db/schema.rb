@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_04_20_174551) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "product_reviews", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
