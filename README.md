@@ -11,6 +11,10 @@ To get started clone this repository to your machine.
 
 Navigate to the directory you just cloned and run `$ bundle install`
 
+Ensure that you have a PostgreSQL server up and running and fill out the related information within the `.env` file.
+
+Once you have PostgreSQL setup and running, run `$ rake db:setup`
+
 To seed the database with some fake data as of right now, run `$ rake db:seed` which will set up our database.
 
 Next to get our application up and running, run `rails s`
