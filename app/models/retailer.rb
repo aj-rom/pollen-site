@@ -15,4 +15,10 @@ class Retailer < ApplicationRecord
                       minimum: 100,
                       maximum: 3000,
                       message: 'Description must be between 100 - 3000 characters'
+
+  def average_review
+    count = product_reviews.count.to_f
+    product_reviews.inject(:+) / count
+  end
+
 end
