@@ -1,0 +1,14 @@
+<%= form_for @retailer, class: "retailer-form" do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+
+  <br>
+
+  <%= f.label :description %> <br>
+  <%= f.text_area :description, required: true %>
+
+  <br>
+
+  <%= f.submit %>
+
+<% end %>
