@@ -1,0 +1,10 @@
+<h1><%= @retailer.name %> Products</h1>
+<% @products.each do |p| %>
+  <%= link_to retailer_product_path(@retailer, p) do %>
+    <div class="product">
+      <h3><%= p.name %></h3>
+      <p><%= p.description %></p>
+      <span>$<%= view_price(p) %></span>
+    </div>
+  <% end %>
+<% end %>

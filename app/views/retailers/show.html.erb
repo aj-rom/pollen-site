@@ -2,8 +2,17 @@
 <p><%= @retailer.description %></p>
 
 <% if user_owns_retailer?(current_user, @retailer) %>
-  <%= link_to 'Edit Retailer', edit_retailer_path(@retailer) %>
-  <%= link_to 'Add Product', new_retailer_product_path(@retailer) %>
+  <ul class="crud">
+    <li>
+      <%= button_to 'Edit Retailer', edit_retailer_path(@retailer), method: :get %>
+    </li>
+    <li>
+      <%= button_to 'Add Product', new_retailer_product_path(@retailer), method: :get %>
+    </li>
+    <li>
+      <%= button_to 'Delete Retailer', delete_retailer_path(@retailer), method: :delete %>
+    </li>
+  </ul>
 <% end %>
 
 <% @retailer.products.each do |p| %>
