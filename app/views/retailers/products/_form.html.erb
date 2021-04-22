@@ -1,19 +1,31 @@
+<% if @product.errors.any? %>
+<!--  This can be DRY'd up for all form validations-->
+  <div id="error_explanation">
+    <h2>Whoops...</h2>
+    <ul>
+      <% @product.errors.full_messages.each do |m| %>
+        <li><%= m %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for [@retailer, @product] do |f| %>
 
   <%= f.hidden_field :retailer_id, value: @retailer.id %>
 
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: true %>
 
   <br>
 
   <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_area :description, required: true %>
 
   <br>
 
   <%= f.label :price %>
-  <%= f.number_field :price, step: :any %>
+  <%= f.number_field :price, step: 0.01, placeholder: 1.00, required: true %>
 
   <br>
 

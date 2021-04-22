@@ -7,11 +7,11 @@
 <% end %>
 
 <% @retailer.products.each do |p| %>
-  <%= link_to p do %>
+  <%= link_to retailer_product_path(@retailer, p) do %>
     <div class="product" id="<%= p.id %>">
       <h3><%= p.name %></h3>
       <p><%= p.description %></p>
-      <span><%= p.price %></span>
+      <span><%= view_price(p) %></span>
     </div>
   <% end %>
 <% end %>
