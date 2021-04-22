@@ -1,9 +1,17 @@
 <h1><%= @product.name %></h1>
 <p><%= @product.description %></p>
-<span>Price: $<%= view_price(@product) %></span>
+<span>Price: <%= view_price(@product) %></span>
 
 <% if user_owns_retailer?(current_user, @retailer) %>
   <br>
-  <%= button_to 'Edit Product', edit_retailer_product_path(@retailer, @product), method: :get %>
-  <%= button_to 'Delete Product', retailer_delete_product_path(@retailer, @product), method: :delete %>
+  <div class="crud">
+    <ul>
+      <li>
+        <%= button_to 'Edit Product', edit_retailer_product_path(@retailer, @product), method: :get %>
+      </li>
+      <li>
+        <%= button_to 'Delete Product', retailer_delete_product_path(@retailer, @product), method: :delete %>
+      </li>
+    </ul>
+  </div>
 <% end %>
