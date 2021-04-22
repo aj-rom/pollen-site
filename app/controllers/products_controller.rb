@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
       flash[:notice] = 'You have successfully created a new product.'
       redirect_to retailer_product_path(@retailer, @product)
     else
-      render partial: 'products/form'
+      render :'retailers/products/new'
     end
   end
 
@@ -37,8 +37,9 @@ class ProductsController < ApplicationController
     if @product.valid?
       @product.save
       flash[:notice] = 'Your product has been updated.'
+      redirect_to retailer_product_path(@retailer, @product)
     else
-      render partial: 'retailers/products/form'
+      render :'retailers/products/edit'
     end
   end
 
