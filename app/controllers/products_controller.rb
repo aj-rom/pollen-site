@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
   before_action :current_product, only: %i[show edit update delete]
   before_action :retailer
 
+  def self.controller_path
+    'retailers/products'
+  end
+
   def index
     @products = @retailer.products.all
   end
@@ -17,7 +21,7 @@ class ProductsController < ApplicationController
     if @product.valid?
       @product.save
       flash[:notice] = 'You have successfully created a new product.'
-      redirect_to @product
+      redirect_to retailer_product_path(@retailer, @product)
     else
       render partial: 'products/form'
     end
@@ -34,7 +38,7 @@ class ProductsController < ApplicationController
       @product.save
       flash[:notice] = 'Your product has been updated.'
     else
-      render partial: 'products/form'
+      render partial: 'retailers/products/form'
     end
   end
 
@@ -61,6 +65,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :price)
+    params.require(:product).permit(:retailer_id, :name, :description, :price)
   end
 end
