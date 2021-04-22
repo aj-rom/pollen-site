@@ -19,7 +19,7 @@ To seed the database with some fake data as of right now, run `$ rake db:seed` w
 
 Next to get our application up and running, run `rails s`
 
-Then go ahead and navigate to the server webpage [here](localhost:3000). 
+Then go ahead and navigate to the server webpage [here](https://127.0.0.1:3000). 
 
 All changes to the views and controllers are updated automatically so you can view your changes live. 
 If for some reason changes seem to not be appearing, try simply restarting your server by running:
