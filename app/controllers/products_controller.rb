@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :default_product, only: %i[new create]
-  before_action :current_product, only: %i[show edit update delete]
+  before_action :current_product, only: %i[show edit update destroy]
   before_action :retailer
 
   def self.controller_path
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     redirect_to @product unless current_user.id == @retailer.user_id
 
     @product.destroy!

@@ -28,7 +28,7 @@ class RetailersController < ApplicationController
     end
   end
 
-  def delete; end
+  def destroy; end
 
   private
 
