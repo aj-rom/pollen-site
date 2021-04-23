@@ -1,0 +1,49 @@
+form.resource {
+  background-color: #2E2F30;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 450px;
+
+  label {
+    padding-right: 5px;
+    font-size: large;
+    color: white;
+  }
+
+  // Text Area
+  textarea {
+    margin-bottom: 20px;
+    max-width: inherit;
+  }
+
+  // Generic Input
+  input {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    max-width: inherit;
+  }
+
+  // Text fields
+  input[type='text'] {
+    border-radius: 3px;
+  }
+
+  // Number Fields
+  input[type='number'] {
+    text-align: right;
+    width: 100px;
+    max-width: 150px;
+  }
+
+  // Submit button
+  input[type='submit'] {
+    padding: 5px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: green;
+  }
+
+}

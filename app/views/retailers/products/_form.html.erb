@@ -9,13 +9,13 @@
 
   <br>
 
-  <%= f.label :description %> <br>
-  <%= f.text_area :description, required: true %>
+  <%= f.label :price %>
+  <%= f.number_field :price, step: 0.01, placeholder: 1.00, required: true %>
 
   <br>
 
-  <%= f.label :price %>
-  <%= f.number_field :price, step: 0.01, placeholder: 1.00, required: true %>
+  <%= f.label :description %> <br>
+  <%= f.text_area :description, required: true %>
 
   <br>
 
