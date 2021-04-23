@@ -1,14 +1,4 @@
-<% if @product.errors.any? %>
-<!--  This can be DRY'd up for all form validations-->
-  <div id="error_explanation">
-    <h2>Whoops...</h2>
-    <ul>
-      <% @product.errors.full_messages.each do |m| %>
-        <li><%= m %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= error_fields(@product) %>
 
 <%= form_for [@retailer, @product] do |f| %>
 

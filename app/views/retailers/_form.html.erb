@@ -1,14 +1,4 @@
-<% if @retailer.errors.any? %>
-  <!--  This can be DRY'd up for all form validations-->
-  <div id="error_explanation">
-    <h2>Whoops...</h2>
-    <ul>
-      <% @retailer.errors.full_messages.each do |m| %>
-        <li><%= m %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= error_fields @retailer %>
 
 <%= form_for @retailer do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
