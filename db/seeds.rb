@@ -9,6 +9,6 @@
 admin = User.create!(email: 'ajiellodev@gmail.com', provider: 'github', uid: 7357807)
 
 r1 = admin.retailers.build(name: 'Sustainable Co',
-                      description: 'A sustainable alternative to your average carbon polluting products.')
-r1.save
-r1.products.build(name: 'Test', price: 34.65, description: 'Just a description of this product.')
+                      description: 'A sustainable alternative to your average carbon polluting products.').save
+
+r1.products.build(name: 'Test', price: 34.65, description: 'Just a description of this product.').save
