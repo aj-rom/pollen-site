@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'static#home'
+  get '/retailers/most_products', to: 'retailers#most_products', as: :retailer_most_products
   resources :retailers, only: %i[index show new create edit update] do
     resources :products, only: %i[index show new create edit update]
     delete '/products/:id', to: 'products#destroy', as: 'delete_product'

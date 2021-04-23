@@ -1,5 +1,5 @@
 module RetailersHelper
   def user_owns_retailer?(user, retailer)
-    true unless retailer.user_id != user.id
+    true unless !user_signed_in? || retailer.user_id != user.id
   end
 end
