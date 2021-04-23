@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -16,22 +18,22 @@ gem 'email_validator'
 
 # Omniauth & Strategies
 gem 'omniauth', '~> 2.0', '>= 2.0.4'
-gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
+gem 'omniauth-rails_csrf_protection'
 
 gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 
 group :development, :test do
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 5.0.0'
-  gem 'rubocop'
 end
 
 group :development do
   gem 'listen', '~> 3.3'
+  gem 'rubocop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
