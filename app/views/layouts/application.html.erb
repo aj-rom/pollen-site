@@ -11,18 +11,30 @@
 
   <body>
 
-  <nav>
-    <ul>
-      <%= nav_link 'Home', root_path %>
-      <%= nav_link 'Retailers', retailers_path %>
-    </ul>
-  </nav>
+    <header>
+      <nav>
+        <ul>
+          <%= nav_link 'Home', root_path %>
+          <%= nav_link 'Retailers', retailers_path %>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="flash">
-      <p class="notice"><%= flash[:notice] %></p>
-      <p class="alert"><%= flash[:alert] %></p>
-    </div>
+    <main>
 
-    <%= yield %>
+      <% if flash[:notice].present? || flash[:alert].present? %>
+        <div class="flash">
+          <p class="notice"><%= flash[:notice] %></p>
+          <p class="alert"><%= flash[:alert] %></p>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </main>
+
+    <footer>
+
+    </footer>
+
   </body>
 </html>

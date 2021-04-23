@@ -2,3 +2,30 @@
  *= require_self
  *= require_tree .
  */
+
+:root {
+    --background-dark: #63768D;
+    --secondary-dark: #02111B;
+
+    --middle-blue: #8AC6D0;
+    --blizzard-blue: #B8F3FF;
+
+    --yellow: #EABA6B;
+}
+
+html {
+    background-color: var(--background-dark);
+}
+body {
+    display: contents;
+}
+
+main {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+
+}
