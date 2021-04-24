@@ -10,14 +10,19 @@ nav {
   }
 
   li {
-    display: inline-block;
+    display: inline-flex;
   }
 
   a {
-    font-size: large;
+    font-size: medium;
     color: #B8F3FF;
     display: block;
     padding: 12px 18px;
     text-decoration: none;
   }
+
+  li:last-child {
+    float: right;
+  }
+
 }

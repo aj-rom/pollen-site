@@ -4,9 +4,9 @@
     <%= nav_link 'Retailers', retailers_path %>
 
     <% if user_signed_in? %>
-      <%= link_to 'Log Out', logout_path, method: :post %>
+      <%= nav_link 'Log Out', destroy_session_path, :post %>
     <% else %>
-      <%= link_to 'Log In', new_session_path %>
+      <%= nav_link 'Log In', new_session_path %>
     <% end %>
   </ul>
 </nav>
