@@ -2,6 +2,7 @@
   <ul>
     <%= nav_link 'Home', root_path %>
     <%= nav_link 'Retailers', retailers_path %>
+    <%= nav_link 'Most Products', retailer_most_products_path %>
 
     <% if user_signed_in? %>
       <%= nav_link 'Log Out', destroy_session_path, :post %>
