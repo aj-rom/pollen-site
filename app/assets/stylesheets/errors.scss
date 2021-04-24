@@ -1,25 +1,26 @@
 .field_with_errors textarea, .field_with_errors input {
-  border: 1px solid red;
+  border: 1px solid var(--red);
 }
 
 #error_explanation {
-  margin: auto;
   max-width: 400px;
-  background-color: #a0a0a0;
+  background-color: var(--jet-gray);
   border-radius: 3px;
-  border: 1px solid #2E2F30;
+  border: 1px solid var(--red);
   padding: 5px;
-  box-shadow: -2px 2px #2E2F30;
+  box-shadow: -2px 2px var(--red);
+
+  margin: auto auto 20px;
 
   h2 {
-    color: red;
+    color: var(--yellow);
     text-align: center;
-    text-shadow: 1px 1px #2E2F30;
+    text-shadow: var(--small-shadow);
   }
 
   ul {
     text-align: left;
-    color: red;
+    color: whitesmoke;
   }
 
 }

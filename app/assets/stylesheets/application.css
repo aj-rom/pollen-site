@@ -4,14 +4,19 @@
  */
 
 :root {
+    --jet-gray: #45424C;
+
     --primary-dark: #2E2F30;
-    --secondary-dark: #02111B;
+    --secondary-dark: #232528;
+    --tertiary-dark: #02111B;
+
 
     --slate-blue: #63768D;
     --middle-blue: #8AC6D0;
     --blizzard-blue: #B8F3FF;
 
     --yellow: #EABA6B;
+    --red: #FF312E;
     --big-shadow: 2px 2px var(--secondary-dark);
     --small-shadow: 1px 1px var(--secondary-dark);
 }
