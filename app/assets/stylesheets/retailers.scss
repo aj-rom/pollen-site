@@ -10,22 +10,40 @@ a {
 }
 
 div#retailer-list {
-  display: inline-block;
-  a { text-decoration: none }
 
-  div.retailer {
+  display: inline-flex;
+  flex-direction: row;
+  margin: auto;
+
+  a {
+    margin: 0 10px 0 10px;
+  }
+
+  a div.retailer {
+    text-decoration: none;
     padding: 10px;
+    background-color: #2E2F30;
+    border-radius: 3px;
 
     h2 {
+      text-align: center;
       color: white;
     }
 
     p {
-
+      color: whitesmoke;
     }
 
     span {
+      // This is where the most reviewed will be
+    }
+  }
 
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+
+    a {
+      margin: 5px 5px 5px 5px;
     }
   }
 }

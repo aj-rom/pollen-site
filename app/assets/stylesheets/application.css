@@ -4,9 +4,10 @@
  */
 
 :root {
-    --background-dark: #63768D;
+    --primary-dark: #00000;
     --secondary-dark: #02111B;
 
+    --slate-blue: #63768D;
     --middle-blue: #8AC6D0;
     --blizzard-blue: #B8F3FF;
 
@@ -15,7 +16,7 @@
     --small-shadow: 1px 1px var(--secondary-dark);
 }
 
-html { background-color: var(--background-dark); }
+html { background-color: var(--slate-blue); }
 body { display: contents; }
 main {
     display: inline-block;
