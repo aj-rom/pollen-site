@@ -8,4 +8,10 @@ module ApplicationHelper
     @resource = resource
     render partial: 'layouts/errors'
   end
+
+  def view_title(title)
+    content_for :title do
+      title
+    end
+  end
 end
