@@ -12,12 +12,7 @@
   <body>
 
     <header>
-      <nav>
-        <ul>
-          <%= nav_link 'Home', root_path %>
-          <%= nav_link 'Retailers', retailers_path %>
-        </ul>
-      </nav>
+      <%= render partial: 'layouts/nav' %>
     </header>
 
     <main>

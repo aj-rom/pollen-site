@@ -13,12 +13,8 @@
     --yellow: #EABA6B;
 }
 
-html {
-    background-color: var(--background-dark);
-}
-body {
-    display: contents;
-}
+html { background-color: var(--background-dark); }
+body { display: contents; }
 
 main {
     display: inline-block;

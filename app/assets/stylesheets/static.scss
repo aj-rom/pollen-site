@@ -5,19 +5,22 @@
 article {
   margin: auto;
   width: 100%;
-
+  text-align: center;
 
   header {
     font-size: xxx-large;
     color: var(--yellow);
     text-shadow: 2px 2px var(--secondary-dark);
-    text-align: center;
+
+    h1 {
+      margin-block-start: .6em;
+      margin-block-end: .23em;
+    }
   }
 
   main {
-   text-align: center;
-
     p {
+      font-size: x-large;
       color: white;
     }
   }

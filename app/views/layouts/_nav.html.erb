@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <%= nav_link 'Home', root_path %>
+    <%= nav_link 'Retailers', retailers_path %>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Log Out', logout_path, method: :post %>
+    <% else %>
+      <%= link_to 'Log In', new_session_path %>
+    <% end %>
+  </ul>
+</nav>
