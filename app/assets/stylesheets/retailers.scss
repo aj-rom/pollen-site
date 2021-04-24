@@ -2,8 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 // Used for the view when accessing /retailers and /retailers/:id
+
+
+// Retailers index page
 a {
   text-decoration: none;
+}
+
+div#retailer-list {
+  display: inline-block;
+  a { text-decoration: none }
+
+  div.retailer {
+    padding: 10px;
+
+    h2 {
+      color: white;
+    }
+
+    p {
+
+    }
+
+    span {
+
+    }
+  }
 }
 
 // Product list for /retailers/:id
