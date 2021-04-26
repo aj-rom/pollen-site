@@ -1,6 +1,17 @@
 <%= view_title 'Retailers' %>
 
 <h1>Retailers</h1>
+<!-- Make this viewavle only by admins -->
+<% if user_signed_in? %>
+  <div class="crud">
+    <ul>
+      <li>
+        <%= button_to 'Add Retailer', new_retailer_path, method: :get %>
+      </li>
+    </ul>
+  </div>
+<% end %>
+
 <div id="retailer-list">
   <% @retailers.each do |r| %>
     <%= link_to r do %>
