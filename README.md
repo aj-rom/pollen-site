@@ -20,7 +20,10 @@ To seed the database with some fake data as of right now, run `$ rake db:seed` w
 Next to get our application up and running, run `rails s`
 
 Then go ahead and navigate to the server webpage [here](https://127.0.0.1:3000). 
-
+* Logging In
+    * Admin user is defaulted to `dev@admin.com` password is `password`
+    * Normal user is defaulted to `user@default.com` password is the same as above.
+    
 All changes to the views and controllers are updated automatically so you can view your changes live. 
 If for some reason changes seem to not be appearing, try simply restarting your server by running:
 
