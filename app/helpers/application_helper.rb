@@ -6,7 +6,7 @@ module ApplicationHelper
 
   def error_fields(resource)
     @resource = resource
-    render partial: 'layouts/errors'
+    render "devise/shared/error_messages", resource: @resource
   end
 
   def view_title(title)
@@ -14,4 +14,5 @@ module ApplicationHelper
       title
     end
   end
+
 end
