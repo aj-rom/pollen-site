@@ -1,6 +1,5 @@
-<%= error_fields(@product) %>
-
 <%= form_for [@retailer, @product], html: { class: 'resource product' } do |f| %>
+  <%= error_messages(@product) %>
 
   <%= f.hidden_field :retailer_id, value: @retailer.id %>
 

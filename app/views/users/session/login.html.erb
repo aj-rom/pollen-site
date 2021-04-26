@@ -4,7 +4,7 @@
 
 <%= form_tag '/login', method: :post, class: 'resource' do |f| %>
 
-  <%= error_fields(@user) %>
+  <%= error_messages(@user) %>
     <div class="field">
       <%= label_tag :email %>
       <%= email_field_tag :email %>
@@ -24,8 +24,4 @@
 
 <%= button_to 'Create an Account', new_user_path, method: :get %>
 
-<div id="strategies">
-  <%- User.omniauth_providers.each do |provider| %>
-    <%= button_to_provider(User, provider) %><br />
-  <% end %>
-</div>
+<%= render partial: 'layouts/strategies' %>
