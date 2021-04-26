@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2021_04_21_213031) do
   enable_extension "plpgsql"
 
   create_table "product_reviews", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "product_id"
+    t.bigint "user_id"
+    t.bigint "product_id"
     t.text "description"
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
@@ -27,17 +27,17 @@ ActiveRecord::Schema.define(version: 2021_04_21_213031) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.text "description"
-    t.float "price"
+    t.decimal "price", precision: 10, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "retailer_id"
   end
 
   create_table "retailers", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "name"
+    t.bigint "user_id"
+    t.text "name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -45,9 +45,11 @@ ActiveRecord::Schema.define(version: 2021_04_21_213031) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
+    t.text "email"
     t.integer "uid"
-    t.string "provider"
+    t.text "provider"
+    t.string "password_digest"
+    t.boolean "admin", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -6,9 +6,46 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin = User.create!(email: 'ajiellodev@gmail.com', provider: 'github', uid: 7357807)
+# Default Admin Account
+admin = User.create(email: 'dev@admin.com', password: 'password',
+                    password_confirmation: 'password', admin: true)
+admin.save
 
-r1 = admin.retailers.build(name: 'Sustainable Co',
-                      description: 'A sustainable alternative to your average carbon polluting products.').save
+# Setting Up The Admin with a retailer and some products
+retailer_1 = admin.retailers
+                  .build(
+                    name: 'Sustainanle CO.',
+                    description: 'Just your friendly sustainable retailer trying to make a difference.')
+retailer_1.save
 
-r1.products.build(name: 'Test', price: 34.65, description: 'Just a description of this product.').save
+r1p1 = retailer_1.products
+                        .build(
+                          name: 'Vegan Leather',
+                          description: 'Leather made from plant material.', price: 34.11)
+r1p1.save
+
+# Default User
+user = User.create(
+  email: 'user@default.com',
+  password: 'password',
+  password_confirmation: 'password')
+user.save
+
+retailer_2 = user.retailers.build(
+  name: 'Impossible Co.',
+  description: 'Making vegan alternatives to your favorite types of meat.')
+retailer_2.save
+
+r2p1 = retailer_2.products.build(
+  name: 'Impossible Burger',
+  description: 'A delicious burger with none of the viscous harm on the cows!',
+  price: 10.99)
+
+r2p1.save
+
+r2p2 = retailer_2.products.build(
+  name: 'Impossible Sausage',
+  description: 'Sausage made from plant based material, spiced to taste exactly like the real thing.',
+  price: 10.99)
+
+r2p2.save

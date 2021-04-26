@@ -254,6 +254,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt
   byebug
   devise!
   dotenv-rails
@@ -274,4 +275,4 @@ RUBY VERSION
    ruby 2.6.1p33
 
 BUNDLED WITH
-   2.2.11
+   2.2.16

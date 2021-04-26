@@ -13,6 +13,8 @@ gem 'pg', '~> 1.2', '>= 1.2.3'
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+# bcrypt for password hashing
+gem 'bcrypt'
 # Use to ease email validation.
 gem 'email_validator'
 

@@ -1,0 +1,5 @@
+<div id="strategies">
+  <%- User.omniauth_providers.each do |provider| %>
+    <%= button_to_provider(User, provider) %><br />
+  <% end %>
+</div>

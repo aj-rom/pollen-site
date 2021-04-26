@@ -1,6 +1,6 @@
-<%= error_fields @retailer %>
-
 <%= form_for @retailer, html: { class: 'resource retailer' } do |f| %>
+  <%= error_fields @retailer %>
+
   <%= f.hidden_field :user_id, value: current_user.id %>
 
   <%= f.label :name %> <br>
