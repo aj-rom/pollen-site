@@ -6,8 +6,7 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-  end
+  def show; end
 
   def edit
     redirect_to @user unless is_owner(@user)
@@ -16,6 +15,12 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
 
+    if @user.valid?
+      @user.save
+      flash[:notice] = 'Successfully updated your account.'
+    else
+      render :'users/edit'
+    end
   end
 
   def new
@@ -26,7 +31,9 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
 
     if @user.valid?
-      raise user_params.inspect
+      @user.save
+      sign_in @user
+      redirect_to @user
     else
       render :'users/new'
     end

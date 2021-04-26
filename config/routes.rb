@@ -15,8 +15,10 @@ Rails.application.routes.draw do
     get 'logout', to: 'devise/sessions#destroy', :as => :destroy_session
   end
 
+  post '/login', to: 'users/session#user_login'
   post '/logout', as: :logout, to: 'users/session#logout'
 
   # Users
-  resources :users, only: %i[index show new create edit update destroy]
+  get '/users/new', to: 'users#new', as: :signup
+  resources :users, only: %i[index show create edit update destroy]
 end

@@ -1,6 +1,25 @@
 <%= view_title 'Log In' %>
 
 <h1>Log In</h1>
+
+<%= form_tag '/login', method: :post, class: 'resource' do |f| %>
+
+  <%= error_fields(@user) %>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= email_field_tag :email %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag 'Log In' %>
+    </div>
+<% end %>
+
 <p>Use any of the following third-party authentication systems to create an account or log in.</p>
 
 <%= button_to 'Create an Account', new_user_path, method: :get %>
