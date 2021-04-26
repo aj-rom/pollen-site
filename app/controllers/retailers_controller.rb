@@ -20,7 +20,7 @@ class RetailersController < ApplicationController
   def show; end
 
   def new
-    redirect_to retailers_index_path unless user_signed_in?
+    redirect_to retailers_path unless user_signed_in?
   end
 
   def create
