@@ -4,9 +4,9 @@ module ApplicationHelper
     render inline: "<li>#{link_to text, path, method: method}</li>"
   end
 
-  def error_fields(resource)
+  def error_messages(resource)
     @resource = resource
-    render "devise/shared/error_messages", resource: @resource
+    render "layouts/errors", resource: @resource
   end
 
   def view_title(title)
