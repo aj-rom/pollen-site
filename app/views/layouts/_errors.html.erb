@@ -1,8 +1,8 @@
-<% if @resource.errors.any? %>
+<% if resource.errors.any? %>
   <div id="error_explanation">
-    <h2>Whoops...</h2>
+    <h2>Whoops there were a couple of errors</h2>
     <ul>
-      <% @resource.errors.full_messages.each do |m| %>
+      <% resource.errors.full_messages.each do |m| %>
         <li><%= m %></li>
       <% end %>
     </ul>
