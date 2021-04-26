@@ -1,6 +1,9 @@
 class RetailersController < ApplicationController
   before_action :default_retailer, only: %i[new create]
   before_action :get_retailer, only: %i[show edit update delete]
+  # TODO: make sure only admins can see/access crud operations
+  # before_action :ensure_admin, only: %i[new create]
+  before_action :ensure_admin_redirect, only: %i[edit update delete]
 
   def index
     @retailers = Retailer.all
@@ -19,9 +22,7 @@ class RetailersController < ApplicationController
 
   def show; end
 
-  def new
-    redirect_to retailers_path unless user_signed_in?
-  end
+  def new; end
 
   def create
     @retailer = Retailer.create(retailer_params)
@@ -34,9 +35,7 @@ class RetailersController < ApplicationController
     end
   end
 
-  def edit
-    redirect_to @retailer unless @retailer.user_id == current_user.id
-  end
+  def edit; end
 
   def update
     @retailer.update(retailer_params)
@@ -53,6 +52,14 @@ class RetailersController < ApplicationController
   def destroy; end
 
   private
+
+  def ensure_admin
+    redirect_to retailers_path unless is_admin? || is_owner(@retailer.id)
+  end
+
+  def ensure_admin_redirect
+    redirect_to @retailer unless is_admin? || is_owner(@retailer.id)
+  end
 
   def default_retailer
     @retailer = Retailer.new
