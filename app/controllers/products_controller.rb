@@ -11,7 +11,9 @@ class ProductsController < ApplicationController
     @products = @retailer.products.all
   end
 
-  def show; end
+  def show
+    @review = @product.product_reviews.build
+  end
 
   def new; end
 
