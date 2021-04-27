@@ -18,10 +18,15 @@ retailer_1 = admin.retailers
                     description: 'Just your friendly sustainable retailer trying to make a difference.')
 retailer_1.save
 
-r1p1 = retailer_1.products
-                        .build(
-                          name: 'Vegan Leather',
-                          description: 'Leather made from plant material.', price: 34.11)
+retailer_2 = admin.retailers.build(
+  name: 'Impossible Co.',
+  description: 'Making vegan alternatives to your favorite types of meat.')
+retailer_2.save
+
+r1p1 = Product.create(
+    retailer_id: 1,
+    name: 'Vegan Leather',
+    description: 'Leather made from plant material.', price: 34.11)
 r1p1.save
 
 # Default User
@@ -31,19 +36,17 @@ user = User.create(
   password_confirmation: 'password')
 user.save
 
-retailer_2 = user.retailers.build(
-  name: 'Impossible Co.',
-  description: 'Making vegan alternatives to your favorite types of meat.')
-retailer_2.save
 
-r2p1 = retailer_2.products.build(
+r2p1 = Product.create(
+  retailer_id: 2,
   name: 'Impossible Burger',
   description: 'A delicious burger with none of the viscous harm on the cows!',
   price: 10.99)
 
 r2p1.save
 
-r2p2 = retailer_2.products.build(
+r2p2 = Product.create(
+  retailer_id: 2,
   name: 'Impossible Sausage',
   description: 'Sausage made from plant based material, spiced to taste exactly like the real thing.',
   price: 10.99)
