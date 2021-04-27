@@ -1,0 +1,23 @@
+<h2>Leave A Review</h2>
+<%= form_for @review,
+             html: { class: 'resource' },
+             url: retailer_product_path(@retailer, @product) + "/product_reviews",
+             method: :post do |f| %>
+  <%= error_messages @review %>
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.number_field :rating, step: 1, min: 1, max: 5, required: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Submit Review'%>
+  </div>
+<% end %>

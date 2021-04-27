@@ -3,7 +3,7 @@
 <p><%= @product.description %></p>
 <span>Price: <%= view_price(@product) %></span>
 
-<% if user_owns_retailer?(current_user, @retailer) %>
+<% if is_admin? || user_owns_retailer?(current_user, @retailer)  %>
   <br>
   <div class="crud">
     <ul>
@@ -15,4 +15,16 @@
       </li>
     </ul>
   </div>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= render partial: 'retailers/products/product_reviews/form' %>
+<% end %>
+
+<% if @product.product_reviews.any? %>
+  <ul class="reviews">
+    <% @product.product_reviews.each do |r| %>
+      <li><%= r.rating %> | <%= r.description %></li>
+    <% end %>
+  </ul>
 <% end %>
