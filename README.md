@@ -21,6 +21,12 @@ You must have a distribution of Ruby installed onto your machine. I prefer using
 
 Download the latest version of [PostgreSQL](https://www.postgresql.org/download/)
 
+#### Setup
+
+Ensure that you create your default postgres account with a password to rememvber. 
+
+Alternativley you can easily create users by using pgMyadmin4, but a user is necessary to access and manipulate the database.
+
 #### pgMyAdmin4 (Optional)
 A good tool for database viewing and managment for PostgreServers.
 * [Docker Container](https://www.pgadmin.org/download/pgadmin-4-container/)
