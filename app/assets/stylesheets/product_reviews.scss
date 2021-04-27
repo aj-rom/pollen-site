@@ -1,3 +1,43 @@
 // Place all the styles related to the productreviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+ul.reviews {
+  color: white;
+  list-style: none;
+  display: inline-flex;
+  margin: 5px auto auto;
+
+  li {
+    margin: 0 10px 20px 10px;
+    display: block;
+  }
+
+  div.review {
+    border-radius: 5px;
+    display: inherit;
+    height: 100%;
+    text-align: left;
+    padding: 15px;
+    background-color: #2E2F30;
+
+    span {
+      max-width: 25px;
+
+      b {
+        color: gold;
+      }
+    }
+
+    p {
+      width: auto;
+      max-width: 250px;
+      padding: 5px;
+      background-color: #45424C;
+    }
+
+    button {
+      float: bottom;
+    }
+
+  }
+}

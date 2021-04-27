@@ -17,14 +17,21 @@
   </div>
 <% end %>
 
-<% if user_signed_in? %>
-  <%= render partial: 'retailers/products/product_reviews/form' %>
-<% end %>
-
 <% if @product.product_reviews.any? %>
   <ul class="reviews">
-    <% @product.product_reviews.each do |r| %>
-      <li><%= r.rating %> | <%= r.description %></li>
+    <% @product.product_reviews.order(rating: :desc).each do |r| %>
+      <% next unless r.valid? %>
+      <li>
+        <div class="review">
+          <span>Rating: <b><%= r.rating %></b></span>
+          <p><%= r.description %></p>
+          <%= button_to 'Delete Review', retailer_product_review_path(@retailer, @product, r), method: :delete if is_admin? %>
+        </div>
+      </li>
     <% end %>
   </ul>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= render partial: 'retailers/products/product_reviews/form' %>
 <% end %>
