@@ -19,7 +19,7 @@ class Retailer < ApplicationRecord
 
   def average_review
     count = product_reviews.count.to_f
-    product_reviews.inject(:+) / count unless count == 0
+    product_reviews.all.map {|r| r.rating}.inject(:+).to_f / count unless count.zero?
   end
 
 end
