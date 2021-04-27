@@ -15,6 +15,8 @@ So far the following operating systems are supported:
 * **Linux (Linux Mint, etc)**
 * **Windows** via [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10) or [Docker](https://www.docker.com/)
 
+### Ruby Version ( 2.6.1 )
+You must have a distribution of Ruby installed onto your machine. I prefer using a *Ruby Version Manager* such as [RVM](https://rvm.io)
 ### PostgreSQL
 
 Download the latest version of [PostgreSQL](https://www.postgresql.org/download/)
