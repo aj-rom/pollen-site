@@ -1,8 +1,7 @@
 # Pollen Site
 
-This is the application that will run our main site. Built on the latest version of rails.
+This is the application that will run our main site. Built on the latest version of rails this was used without any generators. Check out our current progress over at [PollenDev](https://www.github.com/pollendev)
 
-Please do not commit anything to this repository until I finish my project review, thus ensuring that only I, A.J. Romaniello have worked on this. Contributions may begin after my project review.
 
 ## Requirments
 Listed below are all of the pre-requisites you will need to be able to get set up and started.
