@@ -2,7 +2,7 @@
 
 class Retailer < ApplicationRecord
   belongs_to :user
-  has_many :products
+  has_many :products, dependent: :destroy
   has_many :product_reviews, through: :products
 
   # Name validations
@@ -19,7 +19,7 @@ class Retailer < ApplicationRecord
 
   def average_review
     count = product_reviews.count.to_f
-    product_reviews.all.map {|r| r.rating}.inject(:+).to_f / count unless count.zero?
+    product_reviews.all.map(&:rating).inject(:+).to_f / count unless count.zero?
   end
 
 end
