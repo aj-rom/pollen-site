@@ -12,16 +12,16 @@ admin = User.create(email: 'dev@admin.com', password: 'password',
 admin.save
 
 # Setting Up The Admin with a retailer and some products
-retailer_1 = admin.retailers
-                  .build(
-                    name: 'Sustainanle CO.',
-                    description: 'Just your friendly sustainable retailer trying to make a difference.')
-retailer_1.save
+Retailer.create(
+  user_id: 1,
+  name: 'Sustainanle CO.',
+  description: 'Just your friendly sustainable retailer trying to make a difference.')
 
-retailer_2 = admin.retailers.build(
+Retailer.create(
+  user_id: 1,
   name: 'Impossible Co.',
   description: 'Making vegan alternatives to your favorite types of meat.')
-retailer_2.save
+
 
 r1p1 = Product.create(
     retailer_id: 1,
