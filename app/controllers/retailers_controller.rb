@@ -12,6 +12,7 @@ class RetailersController < ApplicationController
   def most_products
     # Retailer Hash Looks like
     # { retailer_id, product_count }
+    # Move to Retailer Model and return Retailer object
     retailer_hash = Product.group(:retailer_id).order('count_id DESC').limit(1).count(:id)
     @retailer = Retailer.find_by(id: retailer_hash.keys.first)
     count = retailer_hash.values.first

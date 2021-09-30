@@ -16,10 +16,9 @@ class ProductReviewsController < ApplicationController
   def new; end
 
   def create
-    @review = ProductReview.create(review_params)
+    @review = current_user.product_reviews.build(review_params)
 
-    if @review.valid?
-      @review.save
+    if @review.save
       flash[:notice] = 'Your review has been saved. Thank you!'
       redirect_to_product
     else
@@ -36,7 +35,7 @@ class ProductReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:product_review).permit( :product_id, :user_id, :rating, :description)
+    params.require(:product_review).permit( :product_id, :rating, :description)
   end
 
   def get_retailer
