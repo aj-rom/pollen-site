@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
   def destroy
     redirect_to @product unless current_user.id == @retailer.user_id
 
-    @product.destroy!
+    @product.destroy
 
     redirect_to retailer_products_path(@retailer)
   end
