@@ -66,4 +66,4 @@ If for some reason changes seem to not be appearing, try simply restarting your 
 * `CTRL + C` to close your server
 * `rails s` to restart it
 
-If you run into any dependency or platform issues, switch to linux or macintosh as these have native support over windows (crazy), and please open a new issue stating the dependency error.
+If you run into any dependency or platform issues, switch to linux or macintosh as these have native support over windows, and please open a new issue stating the dependency error.
